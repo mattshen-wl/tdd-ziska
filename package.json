@@ -1,0 +1,80 @@
+{
+  "name": "tdd-ziska",
+  "version": "1.0.0",
+  "description": "TDD Ziska",
+  "main": "./index.js",
+  "scripts": {
+    "test": "NODE_ENV=unittest ./node_modules/jest/bin/jest.js --coverage --detectOpenHandles --forceExit",
+    "lint": "./node_modules/eslint/bin/eslint.js ./src",
+    "lint-fix": "./node_modules/eslint/bin/eslint.js ./src --fix",
+    "prebuild": "npm install --production",
+    "ci-test": " npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattshen-wl/tdd-ziska"
+  },
+  "author": "Rebel Alliance",
+  "contributors": [
+    "Matt Shen <zshen@woolworths.com.au>"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattshen-wl/tdd-ziska/issues"
+  },
+  "homepage": "https://github.com/mattshen-wl/tdd-ziska#readme",
+  "pre-commit": [
+    "lint",
+    "ci-test"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "babel-jest": "^22.4.3",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "eslint": "^7.21.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "jest": "^23.6.0",
+    "nock": "^10.0.6",
+    "nodemon": "^1.19.0",
+    "pre-commit": "^1.2.2"
+  },
+  "babel": {
+    "plugins": [
+      [
+        "transform-es2015-modules-commonjs",
+        {
+          "allowTopLevelThis": true
+        }
+      ]
+    ]
+  },
+  "jest": {
+    "testRegex": "./__tests__/.*\\.(spec|test)\\.js$",
+    "testEnvironment": "node",
+    "verbose": false,
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "moduleDirectories": [
+      "node_modules",
+      "lib"
+    ],
+    "transform": {
+      ".*": "babel-jest"
+    }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "keywords": [
+    "shared",
+    "modules",
+    "common"
+  ]
+}

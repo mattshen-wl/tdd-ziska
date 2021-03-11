@@ -1,0 +1,15 @@
+{
+    "extends": [
+      "eslint-config-airbnb-base"
+    ],
+    "rules": {
+      "comma-dangle": ["error", "never"],
+      "prefer-destructuring": 0,
+      "no-global-assign": "warn",
+      "max-len": "warn",
+      "no-param-reassign": "warn",
+      "no-confusing-arrow": "warn",
+      "import/prefer-default-export": "warn"
+    },
+    "root": true
+  }
