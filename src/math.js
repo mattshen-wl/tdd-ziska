@@ -27,6 +27,11 @@ const round = (value, precision = 0) => {
   return (value >= 0 || -1) * (Math.round(Math.abs(value) * factor) / factor);
 };
 
-export {
-  round
+function randomIntRange(min, max) {
+  return Math.floor((Math.random() * max) + min);
+}
+
+module.exports = {
+  round,
+  randomIntRange
 };
